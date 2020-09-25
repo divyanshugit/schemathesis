@@ -45,7 +45,7 @@ def test_raw_schema(graphql_schema):
 
 @pytest.mark.hypothesis_nested
 def test_query_strategy(graphql_schema):
-    strategy = graphql_schema.query.as_strategy()
+    strategy = graphql_schema["/graphql/"]["POST"].as_strategy()
 
     @given(case=strategy)
     @settings(max_examples=10)
